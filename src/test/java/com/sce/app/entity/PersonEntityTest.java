@@ -11,13 +11,17 @@ import static com.sce.app.common.ValuesCommon.EXPECTED_NAME;
 import static com.sce.app.common.ValuesCommon.person;
 import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ * Person Entity test class definition.
+ *
+ * @author julija.anna.lisaja@accenture.com
+ */
 public class PersonEntityTest {
 
     private static final Logger logger = LogManager.getLogger(PersonEntityTest.class);
 
     @Test
-    public void testUserDetails() {
-
+    public void testUserDetails_WithAllArgsConstructorAndGetters() {
         assertThat(person.getId()).isEqualTo(EXPECTED_ID);
         assertThat(person.getName()).isEqualTo(EXPECTED_NAME);
         assertThat(person.getAge()).isEqualTo(EXPECTED_AGE);
@@ -25,7 +29,7 @@ public class PersonEntityTest {
     }
 
     @Test
-    public void testUserDetailsWithEmptyConstructor() {
+    public void testUserDetails_WithEmptyConstructorAndSetters() {
 
         PersonEntity person = new PersonEntity();
 
