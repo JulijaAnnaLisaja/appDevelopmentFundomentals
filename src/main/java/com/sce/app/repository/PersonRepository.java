@@ -11,6 +11,8 @@ import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
+import static com.sce.app.common.ConstantCommon.PERSON;
+
 /**
  * Person JpaRepository definition.
  *
@@ -24,7 +26,7 @@ public interface PersonRepository extends JpaRepository<PersonEntity, Integer> {
      *
      * @return all Person records.
      */
-    @Query("SELECT p from Person p")
+    @Query("SELECT p from " + PERSON + " p")
     List<PersonEntity> findAllPersons();
 
     /**
@@ -33,7 +35,7 @@ public interface PersonRepository extends JpaRepository<PersonEntity, Integer> {
      * @param id unique identifier of the Person.
      * @return person by id.
      */
-    @Query("from Person p where p.id = :id")
+    @Query("from " + PERSON + " p where p.id = :id")
     Optional<PersonEntity> findPersonById(@Param("id") Integer id);
 
     /**
@@ -43,7 +45,7 @@ public interface PersonRepository extends JpaRepository<PersonEntity, Integer> {
      */
     @Transactional
     @Modifying
-    @Query("DELETE FROM Person p WHERE p.id = :id")
+    @Query("DELETE FROM " + PERSON + " p WHERE p.id = :id")
     void deletePersonById(@Param("id") Integer id);
 }
 

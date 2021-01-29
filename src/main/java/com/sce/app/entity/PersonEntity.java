@@ -1,5 +1,6 @@
 package com.sce.app.entity;
 
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,12 +11,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import static com.sce.app.common.ConstantCommon.PERSON;
+
 /**
  * Person Entity definition.
  *
  * @author julija.anna.lisaja@accenture.com
  */
-@Entity(name = "Person")
+@Entity(name = PERSON)
 @Getter
 @Setter
 @NoArgsConstructor
